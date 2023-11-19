@@ -1,0 +1,29 @@
+.add--todo--bg{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgb(188, 189, 231);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: 0.3s ease-in-out;
+}
+.display--addpage{
+    z-index: 1;
+    transform: translate(0);
+}
+.add--todo--container {
+    background-color: rgb(39, 42, 51);
+    width: 40%;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 5px rgb(0, 0, 49);
+    margin: 10px;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

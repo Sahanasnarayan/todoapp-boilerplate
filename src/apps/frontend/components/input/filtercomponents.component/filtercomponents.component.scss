@@ -1,0 +1,50 @@
+.filter--container{
+    width: 80%;;
+    background-color: rgb(47, 47, 92);
+    box-shadow: 0 0 5px rgb(0, 0, 49);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    border-radius: 10px;
+    padding: 20px;
+    color: aliceblue;
+    display: flex;
+}
+.filter__header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.filter__header>h4{
+    font-size: 1.3rem;
+    margin: 10px;
+}
+.filter__clr__btn {
+    background-color: transparent;
+    border: 1px solid aliceblue;
+    color: aliceblue;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding:5px 10px;
+    border-radius: 5px;
+
+}
+.filter__clr__btn:hover{
+    background: white;
+    color: rgb(0, 0, 54);
+}
+// .filter__btn{
+//     width: 70%;
+//     padding:7px 15px ;
+//     border-radius: 10px;
+//     border: 1px solid white;
+//     font-size: 1.3rem;
+//     font-weight: 600;
+// }
+// .filter__btn:hover {
+//     cursor: pointer;
+//     background: rgb(255, 219, 88);
+//     color: rgb(0, 0, 83);
+// }
