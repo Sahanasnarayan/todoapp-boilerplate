@@ -7,6 +7,7 @@ import {
   Task,
   CreateTaskParams,
   GetAllTaskParams,
+  UpdateTaskParams,
   DeleteTaskParams,
   GetTaskParams,
 } from '../types';
@@ -20,7 +21,9 @@ export default class TaskController {
     try {
       const params: CreateTaskParams = {
         accountId: req.params.accountId,
-        name: req.body.name as string,
+        title: req.body.title as string,
+        description: req.body.description as string,
+        isComplete: req.body.isComplete as boolean,
       };
       const task: Task = await TaskService.createTask(params);
       res.status(201).send(TaskController.serializeTaskAsJSON(task));
@@ -28,6 +31,25 @@ export default class TaskController {
       next(e);
     }
   }
+    public static async updateTask(
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ): Promise<void> {
+        try {
+            const params: UpdateTaskParams = {
+                accountId: req.params.accountId,
+                taskId: req.params.id,
+                title: req.body.title,
+                description: req.body.description,
+                isComplete: req.body.isComplete as boolean,
+            };
+            const task: Task = await TaskService.updateTask(params);
+            res.status(200).send(TaskController.serializeTaskAsJSON(task));
+        } catch(e) {
+            next(e);
+        }
+    }
 
   public static async deleteTask(
     req: Request,
@@ -40,7 +62,7 @@ export default class TaskController {
         taskId: req.params.id,
       };
       await TaskService.deleteTask(params);
-      res.status(204).send();
+      res.status(204).send(`Task Deletion completed successfully`);
     } catch (e) {
       next(e);
     }
@@ -52,12 +74,12 @@ export default class TaskController {
     next: NextFunction,
   ): Promise <void> {
     try {
-      const page = +req.query.page;
-      const size = +req.query.size;
+      // const page = +req.query.page;
+      // const size = +req.query.size;
       const params: GetAllTaskParams = {
         accountId: req.params.accountId,
-        page,
-        size,
+        // page,
+        // size,
       };
       const tasks = await TaskService.getTasksForAccount(params);
       res.status(200).send(tasks.map((task) => TaskController.serializeTaskAsJSON(task)));
@@ -65,7 +87,7 @@ export default class TaskController {
       next(e);
     }
   }
-
+// may be here i can use filter
   public static async getTask(
     req: Request,
     res: Response,
@@ -87,7 +109,9 @@ export default class TaskController {
     return {
       id: task.id,
       account: task.account,
-      name: task.name,
+      title: task.title,
+      description: task.description,
+      isComplete: task.isComplete,
     };
   }
 }

@@ -5,7 +5,7 @@ import {
   DeleteTaskParams,
   GetAllTaskParams,
   GetTaskParams,
-  GetTaskByNameParams,
+  UpdateTaskParams,
   Task,
 } from './types';
 
@@ -21,12 +21,14 @@ export default class TaskService {
   public static async getTaskForAccount(params: GetTaskParams): Promise<Task> {
     return TaskReader.getTaskForAccount(params);
   }
-
-  public static async getTaskByNameForAccount(params: GetTaskByNameParams): Promise<Task> {
-    return TaskReader.getTaskByNameForAccount(params);
-  }
-
+  
+  public static async updateTask(params: UpdateTaskParams): Promise<Task> {
+    return TaskWriter.updateTask(params);
+}
+  
   public static async getTasksForAccount(params: GetAllTaskParams): Promise<Task[]> {
     return TaskReader.getTasksForAccount(params);
   }
 }
+
+

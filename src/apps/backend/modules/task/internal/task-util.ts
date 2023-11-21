@@ -7,7 +7,9 @@ export default class TaskUtil {
     const task = new Task();
     task.id = taskDb._id.toString();
     task.account = taskDb.account.toString();
-    task.name = taskDb.name;
+    task.title = taskDb.title;
+    task.description= taskDb.description;
+    task.isComplete= taskDb.isComplete;
     return task;
   }
 }
