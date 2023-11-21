@@ -13,6 +13,7 @@ export default class AccountWriter {
     const hashedPassword = await AccountUtil.hashPassword(params.password);
     const dbAccount = await AccountRepository.accountDB.create({
       username: params.username,
+      name: params.name,
       hashedPassword,
       active: true,
     });

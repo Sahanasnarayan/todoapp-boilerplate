@@ -13,7 +13,7 @@ export default class AccountReader {
   public static async getAccountByUsername(username: string): Promise<Account> {
     const dbAccount = await AccountRepository.accountDB.findOne({
       username,
-      active: true,
+      // active: true,
     });
 
     if (!dbAccount) {

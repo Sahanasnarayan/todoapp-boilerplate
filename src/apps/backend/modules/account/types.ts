@@ -3,6 +3,8 @@ import AppError from '../error/app-error';
 
 export class Account {
   id: string;
+  
+  name: string;
 
   username: string;
 
@@ -10,6 +12,7 @@ export class Account {
 }
 
 export type CreateAccountParams = {
+  name: string;
   username: string;
   password: string;
 };
