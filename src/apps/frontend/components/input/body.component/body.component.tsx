@@ -190,7 +190,9 @@ export default function Body (): React.ReactElement {
                                 </div>                           
                               ) : (
                                 <div  className='task-box'>
-                                    <p className='task-title'>{todo.title}</p>
+                                    <div className='task-title' >
+                                    <p>{todo.title}</p>
+                                    </div >
                                     <p className='task-content'>{todo.description} </p>
                                     <button 
                                         className='task-button1' 

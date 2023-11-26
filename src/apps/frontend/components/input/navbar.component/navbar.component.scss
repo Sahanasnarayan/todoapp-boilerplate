@@ -17,7 +17,7 @@ body {
     position:fixed;
     width: 20%;
     height:100vh;
-    background:#081b29;
+    background:linear-gradient(170deg, rgb(8, 140, 160) 3%, #081b29 100%);
     padding: -20px;
     box-sizing:content-box;
     text-align: center;
@@ -37,7 +37,8 @@ body {
   
   .logout-button {
     background-color: #4c99af;
-    color: white;
+    color: rgb(20, 10, 10);
+    font-weight: 700;
     padding: 10px 10px;
     border: none;
     margin-left: 20%;
@@ -49,7 +50,7 @@ body {
   }
   
   .logout-button:hover {
-    background-color: #103148;
+    background-color: rgba(20, 129, 154, 0.141);
   }
   
   .main-content {

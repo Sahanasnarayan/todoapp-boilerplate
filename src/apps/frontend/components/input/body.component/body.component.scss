@@ -11,14 +11,14 @@
 }
 
 .component-input {
+    background: linear-gradient(30deg,white 4%,grey 120%);
     width: 60vh;
     padding: 10px 10px;
 }
 
 .addtaskbox {
-    background:rgb(153, 147, 147);
+    background:linear-gradient(185deg,rgb(14, 155, 183) 5%,grey 130%);
     border: 3px solid rgb(142, 131, 131);
-    border-radius: 10px;
     position: fixed;
     left: 79vh;
     right: 66vh;
@@ -67,11 +67,11 @@
     padding: 6px 35px;
     border: 1px solid rgb(86, 85, 85);
     border-radius: 5px;
-    background-color: rgb(13, 141, 253);
+    background-color:rgb(47, 160, 183);
 }
 
 .component-button:hover {
-    background-color: #0056b3;
+    background-color: grey;
 }
 
 .finish-button {
@@ -110,6 +110,7 @@
 }
 
 .task-box {
+    background: linear-gradient(170deg,rgb(11, 132, 156) 5%,grey 130%);
     width: 20vh;
     height: 20vh;
     display: flex;
@@ -119,6 +120,7 @@
     border-radius: 2px;
 }
 .Inc-task-box {
+    background: linear-gradient(130deg,grey 4%,white 90%);
     width: 35vh;
     height: 6vh;
     display: flex;
@@ -158,7 +160,7 @@
 //     align-items: center;
 //   }
 .edittask-box {
-    background-color: aliceblue;
+    background:linear-gradient(170deg, rgb(8, 140, 160) 3%, #081b29 150%);
     width: 40vh;
     height: 40vh;
     margin: 0 auto;
@@ -175,12 +177,12 @@
 }
 
 .updated-input{
+    background-color: white;
     position:fixed;
     margin: 10px;
     margin-top: 40px;
     width: 90%;
     height: 60px;
-    background: none;
     border: 1px solid rgb(118, 118, 118);
     border-radius: 2px;}
 
@@ -190,7 +192,7 @@
     margin-top: 150px;
     width: 90%;
     height: 120px;
-    background: none;
+    background: white;
     border: 1px solid rgb(118, 118, 118);
     border-radius: 2px;
 }
@@ -215,12 +217,19 @@
 }
 
 .task-title {
+    // font-size: 32px;
+    font-weight: 620;
     margin-top: 20px;
-    width: 30vh;
+    width: 4vh;
+    height:12vh;
     margin-left: 7px;
     margin-bottom: 10px;
+    display:flex;
+    flex-wrap:wrap;
 }
 .task-content {
+    font-size: 18px;
+    color: #fff;
     position: fixed;
     margin-top: -30px;
     width: 30vh;
@@ -229,11 +238,15 @@
 }
 
 .task-button1 {
+    background:#081b29;
+    font-size:13px;
+    color:white;
+    width:85px;
     position:fixed;
-    height: 30px;
-    margin: 150px 10px 0px 8px;
+    height: 27px;
+    margin: 152px 30px 10px 6px;
     border: 1px solid rgb(118, 118, 118);
-    border-radius: 5px;
+    border-radius: 15px;
 }
 .task-button2 {
     position:fixed;
@@ -250,25 +263,29 @@
     border-radius: 5px;
 }
 .Inc-task-button {
+    font-size: 14px;
+    color:white;
+    background:#081b29;
     position:fixed;
-    height: 1px;
+    width:100px;
+    height: 28px;
     margin: 15px 1px;
-    margin-top: 10px;
-    margin-left: 170px;
-    border: 1px solid rgb(118, 118, 118);
+    margin-top: 14px;
+    margin-left: 167px;
+    border-radius: 15px;
     // border-radius: 5px;
 }
 .Inc-del-button {
+    font-size: 22px;
     position: fixed;
     height: 1px;
-    margin: 15px 1px;
-    margin-top: 10px;
-    margin-left: 300px;
-    border: 1px solid rgb(118, 118, 118);
-
+    margin-top: 11px;
+    margin-left: 290px;
 }
 .etask-title {
-    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 16px;
     width: 30%;
     margin-left: 10px;
     position:fixed;
