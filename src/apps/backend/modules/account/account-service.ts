@@ -4,7 +4,8 @@ import AccountWriter from './internal/account-writer';
 import { Account, AccountSearchParams, CreateAccountParams } from './types';
 
 export default class AccountService {
-  public static async createAccount(
+  public static async registerAccount(
+    // cretaaccount 
     params: CreateAccountParams,
   ): Promise<Account> {
     return AccountWriter.createAccount(params);

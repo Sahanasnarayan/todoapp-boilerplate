@@ -15,7 +15,7 @@ export default class AccountWriter {
       username: params.username,
       name: params.name,
       hashedPassword,
-      active: true,
+      // active: true,
     });
     return AccountUtil.convertAccountDBToAccount(dbAccount);
   }

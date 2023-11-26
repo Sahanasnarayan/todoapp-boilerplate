@@ -62,7 +62,7 @@ export default class TaskController {
         taskId: req.params.id,
       };
       await TaskService.deleteTask(params);
-      res.status(204).send(`Task Deletion completed successfully`);
+      res.status(204).send(`Task Deletion completed successfully: ${params}`);
     } catch (e) {
       next(e);
     }

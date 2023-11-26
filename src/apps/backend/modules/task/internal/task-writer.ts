@@ -1,14 +1,13 @@
 import {
   CreateTaskParams,
   DeleteTaskParams,
-  GetTaskParams,
   Task,
   UpdateTaskParams,
   TaskNotFoundError
 } from '../types';
 
 import TaskRepository from './store/task-repository';
-import TaskReader from './task-reader';
+
 import TaskUtil from './task-util';
 
 export default class TaskWriter {
@@ -32,9 +31,9 @@ export default class TaskWriter {
   }
 
   public static async updateTask(params: UpdateTaskParams): Promise<Task> {
-    console.log(params.title);
-    console.log(params.description);
-    console.log(params.isComplete);
+    // console.log(params.title);
+    // console.log(params.description);
+    // console.log(params.isComplete);
     // #This is for checking api
     const updatedTask = await TaskRepository.taskDB.findOneAndUpdate(
         {
@@ -60,15 +59,11 @@ export default class TaskWriter {
 }
 
   public static async deleteTask(params: DeleteTaskParams): Promise<void> {
-    const taskParams: GetTaskParams = {
-      accountId: params.accountId,
-      taskId: params.taskId,
-    };
-    const task = await TaskReader.getTaskForAccount(taskParams);
-    await TaskRepository.taskDB.findOneAndUpdate(
-      {
-        _id: task.id,
-      },
-    );
+    const task = await TaskRepository.taskDB.findOneAndDelete({
+        _id: params.taskId,
+      });
+      if(!task) {
+        throw new TaskNotFoundError(params.taskId);
   }
+}
 }

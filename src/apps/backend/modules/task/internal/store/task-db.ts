@@ -12,7 +12,7 @@ export const taskDbSchema: Schema = new Schema<TaskDB>(
   {
     account: {
       type: Schema.Types.ObjectId,
-      ref: 'Account',
+      // ref: 'Account',
       index: true,
       required: true,
     },

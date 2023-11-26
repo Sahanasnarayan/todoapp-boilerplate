@@ -1,46 +1,62 @@
-.navbar--container {
-    font-family: serif;
-    background: rgb(0, 0, 56);
-    color: white;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    box-shadow: 0 0 5px 2px rgb(0, 17, 92);
-}
-.nav--logo--container{
-    display: flex;
-    align-items: center;
-    gap:1.5rem;
-}
-.nav__logo{
-    width: 70px;
-    border-radius: 10px;
-}
-.nav__title {
-    font-size: 2.5rem;
+
+body {
     margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-.nav__logout__btn {
-    background: transparent;
-    border: 1px solid white;
+    font-family: 'Arial', sans-serif;
+    background-color: #7baace;
+    color: rgb(229, 224, 224);
+    display: flex;
+    height: 100vh;
+  }
+  
+  .homepage-container {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sidebar {
+    position:fixed;
+    width: 20%;
+    height:100vh;
+    background:#081b29;
+    padding: -20px;
+    box-sizing:content-box;
+    text-align: center;
+    display:flex;
+    flex-direction: column; /* Updated to column layout */
+  }
+  
+  .app-name {
+    color: #81c5f1;
+    margin-bottom: 20px;
+  }
+  
+  .user-details {
+    margin-bottom: 726px;
+    color:white;
+  }
+  
+  .logout-button {
+    background-color: #4c99af;
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 1.3rem;
-    font-weight: bold;
+    padding: 10px 10px;
+    border: none;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
     cursor: pointer;
-}
-.nav__logout__btn:hover {
-    background: orangered;
-    box-shadow: 0 0 2px 2px rgb(94, 94, 94);
-}
-@media only screen and (max-device-width:800px){
-    .navbar--container{
-        padding: 15px 25px;
-    }
-}
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #103148;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Add more styles for your main content as needed */
+  

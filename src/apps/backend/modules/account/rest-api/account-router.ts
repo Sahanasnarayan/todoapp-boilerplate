@@ -6,8 +6,8 @@ import AccountController from './account-controller';
 export default class AccountRouter {
   public static getRoutes(): Router {
     const router = Router();
-
-    router.post('/register', AccountController.createAccount);
+// connected with account controller 
+    router.post('/register', AccountController.registerAccount);
     router.post('/login', AccountController.loginAccount);
     return router;
   }

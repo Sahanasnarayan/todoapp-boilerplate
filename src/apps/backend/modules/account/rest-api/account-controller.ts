@@ -4,7 +4,7 @@ import AccountService from '../account-service';
 import { Account, AccountSearchParams, CreateAccountParams } from '../types';
 // imported accountsearchparams
 export default class AccountController {
-  public static async createAccount(
+  public static async registerAccount(
   // registeraccount
     req: Request,
     res: Response,
@@ -13,7 +13,8 @@ export default class AccountController {
     try {
       const { username, name, password }: CreateAccountParams = req.body as CreateAccountParams;
       const params: CreateAccountParams = { username, name, password };
-      const account = await AccountService.createAccount(params);
+      const account = await AccountService.registerAccount(params);
+      // createaccount 
       res.status(201).send(AccountController.serializeAccountAsJSON(account));
     } catch (e) {
       next(e);

@@ -1,29 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './navbar.component.scss';
-
 export default function NavBar(): React.ReactElement {
 
-    // import "../css/navbar.css";
-    // import logo from "../../../assets/todo_logo.png"
-    
+  const navigate = useNavigate();
 
-    
-        // const handleLogout = () => {
-        //     localStorage.removeItem("token");
-        //     window.location.href = "/";
-        // }
+  useEffect(() => {
+      const user = localStorage.getItem('token');
+      if(!user) {
+          navigate('/');
+      }
+  }, [])
+
+  const handleLogout = () => {
+      localStorage.removeItem('token');
+      localStorage.removeItem('accountId');
+      navigate('/');
+  }
         return (
-            <div className="navbar--container">
-                <div className="nav--logo--container">
-                    {/* <img src={logo} alt="todo logo" className="nav__logo"/> */}
-                    <h1 className="nav__title">TODO-APP</h1>
-                </div>
-                <button className="nav__logout__btn"
-                    // onClick={()=>handleLogout()}
-                >Logout</button>
-            </div>
-     
-    
+           
+
+    <div className="homepage-container">
+      <div className="sidebar">
+        <h1 className="app-name">Your Todo App</h1>
+        <div className="user-details">
+          <p>Welcome, John Doe!</p>
+        </div>
+        <button onClick={handleLogout} className="logout-button">Logout</button>
+      </div>
+      <div className="main-content">
+        {/* Your main content goes here */}
+      </div>
+    </div>
+
 
   );
 };
