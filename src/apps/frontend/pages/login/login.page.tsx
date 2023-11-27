@@ -56,7 +56,6 @@ const login = useCallback(async (e) => {
         <div className="input-box">
           <input
             type='text'
-            placeholder='Eg: Sahana'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -65,7 +64,6 @@ const login = useCallback(async (e) => {
         <div className="input-box">
         <input
             type='password'
-            placeholder='Eg: xyz123'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

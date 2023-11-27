@@ -62,7 +62,6 @@ export default function Register(): React.ReactElement {
       type='text'
       value={name}
       onChange={(e) => setName(e.target.value)}
-      placeholder='Eg: Irfan Gouri'
     />
       <label> Name</label>
       </div>
@@ -71,7 +70,6 @@ export default function Register(): React.ReactElement {
      type='text' 
      value={username}
      onChange={(e) => setUsername(e.target.value)}
-     placeholder='Eg: xyz@gmail.com'
     />
       <label> Username</label>
   </div>
@@ -79,8 +77,7 @@ export default function Register(): React.ReactElement {
   <input
       type='password'
       value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      placeholder='Eg: xyz123' 
+      onChange={(e) => setPassword(e.target.value)} 
     />
       <label> Password</label>
       </div>
