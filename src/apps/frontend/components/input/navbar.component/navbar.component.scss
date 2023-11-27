@@ -24,10 +24,41 @@ body {
     display:flex;
     flex-direction: column; /* Updated to column layout */
   }
-  
+  @keyframes moveAppName {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px); /* Adjust the distance the icon moves up */
+    }
+  }
   .app-name {
-    color: #81c5f1;
-    margin-bottom: 20px;
+    position: fixed;
+    color:rgb(0, 0, 0);
+    font-size:200px;
+    margin-top: -60px;
+    margin-left:100px;
+    animation: moveAppName 3s infinite alternate; /* Add animation property */
+  }
+  @keyframes moveAppTitle {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(10px); /* Adjust the distance the title moves down */
+    }
+  }
+  
+  
+  .app-title {
+    position: fixed;
+    margin-top: 148px;
+    margin-left:204px;
+    font-size:27px;
+    font-weight: 500;
+    font-style:italic;
+    color:rgb(194, 190, 190);
+    animation: moveAppTitle 3s infinite alternate;
   }
   
   .user-details {
@@ -41,6 +72,7 @@ body {
     font-weight: 700;
     padding: 10px 10px;
     border: none;
+    margin-top: 90px;;
     margin-left: 20%;
     margin-right: 20%;
     border-radius: 10px;
@@ -50,7 +82,7 @@ body {
   }
   
   .logout-button:hover {
-    background-color: rgba(20, 129, 154, 0.141);
+    background-color: grey;
   }
   
   .main-content {

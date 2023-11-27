@@ -6,37 +6,7 @@ import { AccessService } from '../../services';
 
 export default function Login(): React.ReactElement {
   const navigate = useNavigate();
-  // const { accessService } = useDeps();
-  // const [username, setUsername] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [success, setSuccess] = useState(false);
-  // const [error, setError] = useState(false);
-
-  // const login = useCallback(async () => {
-  //   setSuccess(false);
-  //   setError(false);
-
-  //   try {
-  //     await accessService.login(username, password);
-  //     setSuccess(true);
-  //   } catch (err) {
-  //     setError(true);
-  //   }
-  // }, [
-  //   accessService,
-  //   username,
-  //   password,
-  // ]);
-
-//   return (
-//     <form>
-//       {success ? <h2 id='success'>SUCCESS!</h2> : null}
-//       {error ? <h2 id='error'>ERROR!</h2> : null}
-      
-
-//     </form>
-//   );
-// }
+  
 const accessService = new AccessService();
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');

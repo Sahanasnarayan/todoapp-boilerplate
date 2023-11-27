@@ -164,27 +164,26 @@ export default function Body (): React.ReactElement {
                                              {updateTaskId === todo.id ? (
                                 <div className='edittask-overlay'>
                                 <div  className='edittask-box'>
+                                    <p className= 'editt'> Title: </p>
                                     <input 
                                       value={updatedDesc}
                                       onChange={(e) => setUpdatedDesc(e.target.value)}
                                         className='updated-input'
                                     />
+                                    <p className= 'editd'> Description: </p>
                                     <input 
                                       value={updatedTitle}
                                       onChange={(e) => setUpdatedTitle(e.target.value)}
                                         className='updated-inputDesc'
                                     />
-                                 <div className='Sedittask-button'>
-                                    <button
+                                 <div className='Sedittask-button'
+                                    
         
-                                        onClick={() => save(todo.id, todo.isComplete)}
-                                    >Save</button>
+                                        onClick={() => save(todo.id, todo.isComplete)}>
+                                    Save
                                     </div>
-                                    <div className='edittask-button'>
-                                    <button
-                                        
-                                        onClick={() => cancel()}
-                                    >Cancel</button>
+                                    <div className='edittask-button'
+                                onClick={() => cancel()}>Cancel
                                     </div>
                                 </div> 
                                 </div>                           
