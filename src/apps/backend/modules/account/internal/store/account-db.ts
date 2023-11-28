@@ -10,13 +10,16 @@ export interface AccountDB {
 
 export const accountDbSchema: Schema = new Schema<AccountDB>(
   {
-    name: { type: String, required: true },
-    hashedPassword: { type: String, required: true },
+    name: { type: String, required: true, trim: true,
+      length: { min: 3, max: 20 }, },
+    hashedPassword: { type: String, required: true ,trim: true},
     username: {
       type: String,
       index: true,
       required: true,
       unique: true,
+      trim: true,
+      length: { min: 8 },
     },
   },
   {

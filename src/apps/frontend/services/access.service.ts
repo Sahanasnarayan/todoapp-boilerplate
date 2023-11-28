@@ -14,7 +14,6 @@ export default class AccessService extends APIService {
       password
     });
   }
-
   //task CRUD operation
   add(userId, token, title, description): Promise<any> {
     const config = {

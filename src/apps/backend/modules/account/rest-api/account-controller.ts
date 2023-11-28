@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-
+import { validationResult } from 'express-validator';
 import AccountService from '../account-service';
 import { Account, AccountSearchParams, CreateAccountParams } from '../types';
 // imported accountsearchparams
@@ -11,6 +11,13 @@ export default class AccountController {
     next: NextFunction,
   ): Promise<void> {
     try {
+      const validationErrors = validationResult(req);
+      if (!validationErrors.isEmpty()) {
+        // If there are validation errors, send a response with the errors
+        res.status(400).json({ errors: validationErrors.array().map(error => error.msg) });
+
+        return;
+      }
       const { username, name, password }: CreateAccountParams = req.body as CreateAccountParams;
       const params: CreateAccountParams = { username, name, password };
       const account = await AccountService.registerAccount(params);
@@ -20,12 +27,20 @@ export default class AccountController {
       next(e);
     }
   }
+
   public static async loginAccount(
     req: Request,
     res: Response,
     next: NextFunction,
   ): Promise<void> {
     try {
+      // const validationErrors = validationResult(req);
+      // if (!validationErrors.isEmpty()) {
+      //   // If there are validation errors, send a response with the errors
+      //   res.status(400).json({ errors: validationErrors.array().map(error => error.msg) });
+      //   return;
+      // }
+
       const { username, password }: AccountSearchParams = req.body as AccountSearchParams;
       const params: AccountSearchParams = {username, password};
       const account = await AccountService.getAccountByUsernamePassword(params);
@@ -34,7 +49,6 @@ export default class AccountController {
       next(e);
     }
   }
-
 
   private static serializeAccountAsJSON(account: Account): unknown {
     return {

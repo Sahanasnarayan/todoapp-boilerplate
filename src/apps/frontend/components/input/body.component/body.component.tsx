@@ -129,21 +129,21 @@ export default function Body (): React.ReactElement {
             //   onClick={() => setShowDescriptionInput(true)}
               onClick={addTodo}
             >
-              Add
+              ADD
             </button>
             {showDescriptionInput && (
                 <div className='addtaskbox'>
                     <div className='title'>
                         <input className='component-title'
                         onChange={(e) => setTitle(e.target.value)}
-                        placeholder= 'enter the title'
+                        placeholder= 'enter the task-title'
                         />   
                         {/* check here with onchange */}
               <div className='input-description'>
                 <input 
                   className='component-description' 
                   onChange={(e) => setDesc(e.target.value)}
-                  placeholder='enter the description' 
+                  placeholder='enter the task-description' 
                 />
                 <button 
                   className='finish-button' 
@@ -164,13 +164,13 @@ export default function Body (): React.ReactElement {
                                              {updateTaskId === todo.id ? (
                                 <div className='edittask-overlay'>
                                 <div  className='edittask-box'>
-                                    <p className= 'editt'> Title: </p>
+                                    <p className= 'editt'> TITLE: </p>
                                     <input 
                                       value={updatedDesc}
                                       onChange={(e) => setUpdatedDesc(e.target.value)}
                                         className='updated-input'
                                     />
-                                    <p className= 'editd'> Description: </p>
+                                    <p className= 'editd'> DESCRIPTION: </p>
                                     <input 
                                       value={updatedTitle}
                                       onChange={(e) => setUpdatedTitle(e.target.value)}
@@ -180,10 +180,10 @@ export default function Body (): React.ReactElement {
                                     
         
                                         onClick={() => save(todo.id, todo.isComplete)}>
-                                    Save
+                                    SAVE
                                     </div>
                                     <div className='edittask-button'
-                                onClick={() => cancel()}>Cancel
+                                onClick={() => cancel()}>CANCEL
                                     </div>
                                 </div> 
                                 </div>                           
