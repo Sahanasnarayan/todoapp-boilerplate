@@ -1,95 +1,97 @@
-
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #7baace;
-    color: rgb(229, 224, 224);
-    display: flex;
-    height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #7baace;
+  color: rgb(229, 224, 224);
+  display: flex;
+  height: 100vh;
+}
+
+.homepage-container {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  background: linear-gradient(170deg, rgb(8, 140, 160) 3%, #081b29 100%);
+  padding: -20px;
+  box-sizing: content-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes moveAppName {
+  0% {
+    transform: translateY(0);
   }
-  
-  .homepage-container {
-    display: flex;
-    flex: 1;
+
+  100% {
+    transform: translateY(-10px);
+    /* Adjust the distance the icon moves up */
   }
-  
-  .sidebar {
-    position:fixed;
-    width: 20%;
-    height:100vh;
-    background:linear-gradient(170deg, rgb(8, 140, 160) 3%, #081b29 100%);
-    padding: -20px;
-    box-sizing:content-box;
-    text-align: center;
-    display:flex;
-    flex-direction: column; /* Updated to column layout */
+}
+
+.app-name {
+  position: fixed;
+  color: rgb(0, 0, 0);
+  font-size: 200px;
+  margin-top: -60px;
+  margin-left: 100px;
+  animation: moveAppName 3s infinite alternate;
+}
+
+@keyframes moveAppTitle {
+  0% {
+    transform: translateY(0);
   }
-  @keyframes moveAppName {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-10px); /* Adjust the distance the icon moves up */
-    }
+
+  100% {
+    transform: translateY(10px);
+    /* Adjust the distance the title moves down */
   }
-  .app-name {
-    position: fixed;
-    color:rgb(0, 0, 0);
-    font-size:200px;
-    margin-top: -60px;
-    margin-left:100px;
-    animation: moveAppName 3s infinite alternate; /* Add animation property */
-  }
-  @keyframes moveAppTitle {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(10px); /* Adjust the distance the title moves down */
-    }
-  }
-  
-  
-  .app-title {
-    position: fixed;
-    margin-top: 148px;
-    margin-left:204px;
-    font-size:27px;
-    font-weight: 500;
-    font-style:italic;
-    color:rgb(194, 190, 190);
-    animation: moveAppTitle 3s infinite alternate;
-  }
-  
-  .user-details {
-    margin-bottom: 726px;
-    color:white;
-  }
-  
-  .logout-button {
-    background-color: #4c99af;
-    color: rgb(20, 10, 10);
-    font-weight: 700;
-    padding: 10px 10px;
-    border: none;
-    margin-top: 90px;;
-    margin-left: 20%;
-    margin-right: 20%;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-  }
-  
-  .logout-button:hover {
-    background-color: grey;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  /* Add more styles for your main content as needed */
-  
+}
+
+.app-title {
+  position: fixed;
+  margin-top: 148px;
+  margin-left: 204px;
+  font-size: 27px;
+  font-weight: 700;
+  font-style: italic;
+  color: rgb(246, 238, 238);
+  animation: moveAppTitle 3s infinite alternate;
+}
+
+.user-details {
+  margin-bottom: 726px;
+  color: white;
+}
+
+.logout-button {
+  background-color: #4c99af;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  padding: 10px 10px;
+  border: none;
+  margin-top: 90px;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: grey;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}

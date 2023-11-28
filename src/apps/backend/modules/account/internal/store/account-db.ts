@@ -2,7 +2,6 @@ import { Schema, Types } from 'mongoose';
 
 export interface AccountDB {
   _id: Types.ObjectId;
-  // active: boolean;
   name: string;
   username: string;
   hashedPassword: string;

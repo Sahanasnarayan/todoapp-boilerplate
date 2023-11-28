@@ -7,27 +7,30 @@ export default function NavBar(): React.ReactElement {
   const navigate = useNavigate();
 
   useEffect(() => {
-      const user = localStorage.getItem('token');
-      if(!user) {
-          navigate('/');
-      }
+    const user = localStorage.getItem('token');
+    if (!user) {
+      navigate('/');
+    }
   }, [])
 
   const handleLogout = () => {
-      localStorage.removeItem('token');
-      localStorage.removeItem('accountId');
-      navigate('/');
+    localStorage.removeItem('token');
+    localStorage.removeItem('accountId');
+    navigate('/');
   }
-        return (
-           
+  return (
 
     <div className="homepage-container">
       <div className="sidebar">
-        <h1 className="app-name"><LuListTodo/></h1>
+        <h1 className="app-name">
+          <LuListTodo />
+        </h1>
         <p className="app-title">To-do</p>
         <div className="user-details">
         </div>
-        <button onClick={handleLogout} className="logout-button">Logout</button>
+        <button onClick={handleLogout} className="logout-button">
+          Logout
+        </button>
       </div>
       <div className="main-content">
         {/* Your main content goes here */}

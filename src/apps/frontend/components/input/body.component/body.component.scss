@@ -1,4 +1,3 @@
-
 .input-component {
     position: fixed;
     left: 120px;
@@ -11,13 +10,13 @@
 }
 
 .component-input {
-    background: linear-gradient(30deg,white 4%,grey 120%);
+    background: linear-gradient(30deg, white 4%, grey 120%);
     width: 60vh;
     padding: 10px 10px;
 }
 
 .addtaskbox {
-    background:linear-gradient(185deg,rgb(14, 155, 183) 5%,grey 130%);
+    background: linear-gradient(185deg, rgb(14, 155, 183) 5%, grey 130%);
     border: 3px solid rgb(142, 131, 131);
     position: fixed;
     left: 79vh;
@@ -28,9 +27,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: translateY(-20px); /* Move up by 20px initially */
-    transition: opacity 1s ease, transform 0.5s ease; /* Transition for opacity and transform */
-  }
+    transform: translateY(-20px);
+    transition: opacity 1s ease, transform 0.5s ease;
+}
 
 .title {
     position: fixed;
@@ -42,11 +41,13 @@
     justify-content: center;
     align-items: center;
 }
+
 .component-title {
     width: 69.5vh;
-    padding:13px 20px;
-    border:3px solid rgb(94, 87, 87);
+    padding: 13px 20px;
+    border: 3px solid rgb(94, 87, 87);
 }
+
 .input-description {
     position: fixed;
     left: 10px;
@@ -56,17 +57,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // flex-wrap:wrap;
     overflow: hidden;
     word-wrap: break-word;
-    border:3px solid rgb(93, 91, 91);
+    border: 3px solid rgb(93, 91, 91);
 }
- 
- .component-description {
+
+.component-description {
     width: 100vh;
-    height:50vh;
-    padding:10px 18px;
- } 
+    height: 50vh;
+    padding: 10px 18px;
+}
 
 .component-button {
     font-weight: 600;
@@ -74,7 +74,7 @@
     padding: 6px 35px;
     border: 2px solid rgb(127, 124, 124);
     border-radius: 5px;
-    background-color:rgb(47, 160, 183);
+    background-color: rgb(47, 160, 183);
 }
 
 .component-button:hover {
@@ -82,47 +82,48 @@
 }
 
 .finish-button {
-    position:fixed;
-    width:13%;
-    top:20vh;
+    position: fixed;
+    width: 13%;
+    top: 20vh;
     justify-content: centre;
     padding: 5px 8px;
     border: 3px solid rgb(42, 145, 166);
     border-radius: 5px;
     font-weight: 500;
 }
+
 .finish-button:hover {
     background: grey;
 }
 
-// this is for the task box 
 .task {
     height: 58%;
-    width:60%;
+    width: 60%;
     position: fixed;
     top: 40vh;
     left: 45vh;
     right: 0;
-    overflow:auto;
-    display:flex;
-    flex-direction:row;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
     align-items: auto;
     flex-wrap: wrap;
 }
-.Inc-task  {
-    width:15%;
-    left:168vh;
+
+.Inc-task {
+    width: 15%;
+    left: 168vh;
     position: fixed;
     top: 8vh;
     right: 0;
     overflow: visible;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
 }
 
 .task-box {
-    background: linear-gradient(170deg,rgb(11, 132, 156) 5%,grey 130%);
+    background: linear-gradient(170deg, rgb(11, 132, 156) 5%, grey 130%);
     width: 20vh;
     height: 20vh;
     display: flex;
@@ -131,11 +132,13 @@
     border: 1px solid rgb(50, 47, 47);
     border-radius: 2px;
 }
-.task-box:hover{
-    background: linear-gradient(120deg,rgb(189, 183, 183) 4%,rgb(113, 108, 108) 90%);
+
+.task-box:hover {
+    background: linear-gradient(120deg, rgb(189, 183, 183) 4%, rgb(113, 108, 108) 90%);
 }
+
 .Inc-task-box {
-    background: linear-gradient(130deg,grey 4%,white 90%);
+    background: linear-gradient(130deg, grey 4%, white 90%);
     width: 35vh;
     height: 6vh;
     display: flex;
@@ -145,9 +148,11 @@
     margin-left: 76%;
     margin-top: 1vh;
 }
-.Inc-task-box:hover{
-    background:rgb(215, 131, 67);
+
+.Inc-task-box:hover {
+    background: rgb(215, 131, 67);
 }
+
 .edittask-overlay {
     position: fixed;
     top: 0;
@@ -159,29 +164,14 @@
     justify-content: center;
     align-items: center;
     z-index: 1000; // Ensure it's above other content
-  }
-  
-//   .edittask-box {
-//     width: 40vh;
-//     height: 40vh;
-//     background-color: white;
-//     border: 1px solid black;
-//     border-radius: 2px;
-//     position: fixed;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     overflow: visible;
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//   }
+}
+
 .edittask-box {
-    background:linear-gradient(170deg, rgb(8, 140, 160) 3%, #081b29 150%);
+    background: linear-gradient(170deg, rgb(8, 140, 160) 3%, #081b29 150%);
     width: 60vh;
     height: 40vh;
     margin: 0 auto;
-    border:2px solid rgb(22, 189, 201);
+    border: 2px solid rgb(22, 189, 201);
     border-radius: 2px;
     position: fixed;
     top: 50%;
@@ -192,34 +182,38 @@
     flex-direction: column;
     align-items: center;
 }
+
 .editt {
-position:fixed;
-top:18px;
-font-weight: 700;
-font-size: large;
-color:rgb(255, 255, 255);
-left:32px;
+    position: fixed;
+    top: 18px;
+    font-weight: 700;
+    font-size: large;
+    color: rgb(255, 255, 255);
+    left: 32px;
 }
+
 .editd {
-position:fixed;
-font-size: large;
-top:130px;
-font-weight: 700;
-color:rgb(255, 255, 255);
-left:32px;
+    position: fixed;
+    font-size: large;
+    top: 130px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    left: 32px;
 }
-.updated-input{
+
+.updated-input {
     background: rgb(255, 241, 241);
-    position:fixed;
+    position: fixed;
     margin: 10px;
-    color:rgb(59, 55, 55);
+    color: rgb(59, 55, 55);
     font-weight: 600;
     margin-top: 50px;
     width: 90%;
     text-align: center;
     height: 60px;
     border: 2.3px solid rgb(13, 94, 100);
-    border-radius: 5px;}
+    border-radius: 5px;
+}
 
 .updated-inputDesc {
     position: fixed;
@@ -228,21 +222,22 @@ left:32px;
     width: 90%;
     text-align: center;
     height: 120px;
-    color:rgb(60, 57, 57);
+    color: rgb(60, 57, 57);
     font-weight: 600;
     font-size: medium;
     background: rgb(255, 248, 248);
-    border:  2.3px solid rgb(13, 94, 100);
+    border: 2.3px solid rgb(13, 94, 100);
     border-radius: 5px;
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
+
 .Sedittask-button {
-    width:80px;
-    background:white;
-    color:#081b29;
+    width: 80px;
+    background: white;
+    color: #081b29;
     font-weight: 700;
     height: 30px;
     position: fixed;
@@ -251,43 +246,45 @@ left:32px;
     margin-top: 35vh;
     border: 1px solid rgb(118, 118, 118);
     border-radius: 15px;
-    // cursor: pointer;
 }
-.Sedittask-button:hover{
-    background:#0ef;
+
+.Sedittask-button:hover {
+    background: #0ef;
 }
+
 .edittask-button {
-    width:80px;
+    width: 80px;
     text-align: center;
     position: fixed;
-    background:white;
+    background: white;
     font-weight: 700;
     height: 30px;
     margin-right: -9vh;
     margin-top: 35vh;
     border: 1px solid rgb(118, 118, 118);
     border-radius: 15px;
-    // cursor: pointer;
 }
-.edittask-button:hover{
-    background:#0ef;
+
+.edittask-button:hover {
+    background: #0ef;
 }
 
 .task-title {
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 13px;
-    position:fixed;
+    position: fixed;
     font-weight: 750;
     margin-top: 12px;
     width: 18vh;
-    height:13vh;
+    height: 13vh;
     margin-left: 7px;
     margin-bottom: 10px;
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
+
 .task-content {
     font-size: 18px;
     color: #fff;
@@ -299,58 +296,62 @@ left:32px;
 }
 
 .task-button1 {
-    background:#081b29;
-    font-size:13px;
-    color:white;
-    width:85px;
-    position:fixed;
+    background: #081b29;
+    font-size: 13px;
+    color: white;
+    width: 85px;
+    position: fixed;
     height: 27px;
     margin: 152px 30px 10px 6px;
     border: 1px solid rgb(118, 118, 118);
     border-radius: 15px;
 }
-.task-button1:hover {
 
-     color:rgb(0, 255, 251);
+.task-button1:hover {
+    color: rgb(0, 255, 251);
 }
 
-
 .task-button2 {
-    position:fixed;
+    position: fixed;
     height: 1px;
     margin: 150px 30px 0px 137px;
     border: 1px solid rgb(118, 118, 118);
     border-radius: 5px;
 }
+
 .task-button2:hover {
-     color:rgb(0, 255, 251);
+    color: rgb(0, 255, 251);
 }
+
 .task-button3 {
-    position:fixed;
+    position: fixed;
     height: 3px;
     margin: 150px 10px 0px 163px;
     border: 1px solid rgb(118, 118, 118);
     border-radius: 5px;
 }
+
 .task-button3:hover {
-    color:rgb(0, 255, 251);
+    color: rgb(0, 255, 251);
 }
+
 .Inc-task-button {
     font-size: 14px;
-    color:white;
-    background:#081b29;
-    position:fixed;
-    width:100px;
+    color: white;
+    background: #081b29;
+    position: fixed;
+    width: 100px;
     height: 28px;
     margin: 15px 1px;
     margin-top: 14px;
     margin-left: 167px;
     border-radius: 15px;
-    // border-radius: 5px;
 }
+
 .Inc-task-button:hover {
-    background:rgb(120, 115, 115);
+    background: rgb(120, 115, 115);
 }
+
 .Inc-del-button {
     font-size: 22px;
     position: fixed;
@@ -358,8 +359,9 @@ left:32px;
     margin-top: 11px;
     margin-left: 290px;
 }
-.Inc-del-button:hover{
-    color:rgb(120, 115, 115);
+
+.Inc-del-button:hover {
+    color: rgb(120, 115, 115);
 }
 
 .etask-title {
@@ -368,6 +370,5 @@ left:32px;
     margin-top: 16px;
     width: 30%;
     margin-left: 10px;
-    position:fixed;
+    position: fixed;
 }
-

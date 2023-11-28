@@ -1,7 +1,5 @@
 import * as bcrypt from 'bcrypt';
-
 import { Account } from '../types';
-
 import { AccountDB } from './store/account-db';
 
 export default class AccountUtil {

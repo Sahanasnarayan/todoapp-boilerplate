@@ -31,25 +31,25 @@ export default class TaskController {
       next(e);
     }
   }
-    public static async updateTask(
-        req: Request,
-        res: Response,
-        next: NextFunction,
-    ): Promise<void> {
-        try {
-            const params: UpdateTaskParams = {
-                accountId: req.params.accountId,
-                taskId: req.params.id,
-                title: req.body.title,
-                description: req.body.description,
-                isComplete: req.body.isComplete as boolean,
-            };
-            const task: Task = await TaskService.updateTask(params);
-            res.status(200).send(TaskController.serializeTaskAsJSON(task));
-        } catch(e) {
-            next(e);
-        }
+  public static async updateTask(
+    req: Request,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> {
+    try {
+      const params: UpdateTaskParams = {
+        accountId: req.params.accountId,
+        taskId: req.params.id,
+        title: req.body.title,
+        description: req.body.description,
+        isComplete: req.body.isComplete as boolean,
+      };
+      const task: Task = await TaskService.updateTask(params);
+      res.status(200).send(TaskController.serializeTaskAsJSON(task));
+    } catch (e) {
+      next(e);
     }
+  }
 
   public static async deleteTask(
     req: Request,
@@ -72,14 +72,10 @@ export default class TaskController {
     req: Request,
     res: Response,
     next: NextFunction,
-  ): Promise <void> {
+  ): Promise<void> {
     try {
-      // const page = +req.query.page;
-      // const size = +req.query.size;
       const params: GetAllTaskParams = {
         accountId: req.params.accountId,
-        // page,
-        // size,
       };
       const tasks = await TaskService.getTasksForAccount(params);
       res.status(200).send(tasks.map((task) => TaskController.serializeTaskAsJSON(task)));
@@ -87,7 +83,6 @@ export default class TaskController {
       next(e);
     }
   }
-// may be here i can use filter
   public static async getTask(
     req: Request,
     res: Response,

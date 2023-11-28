@@ -3,8 +3,6 @@ import {
   GetTaskParams,
   Task,
   TaskNotFoundError,
-  // GetTaskByNameParams,
-  // TaskWithNameNotFoundError,
 } from '../types';
 
 import TaskRepository from './store/task-repository';
@@ -22,22 +20,9 @@ export default class TaskReader {
     return TaskUtil.convertTaskDBToTask(task);
   }
 
-
-  public static async getTasksForAccount(params: GetAllTaskParams): Promise<Task []> {
-    // const totalTasksCount = await TaskRepository.taskDB
-    //   .countDocuments({
-    //     account: params.accountId,
-    //     active: true,
-    //   });
-    // const paginationParams: PaginationParams = {
-    //   page: (params.page) ? (params.page) : 1,
-    //   size: (params.size) ? (params.size) : totalTasksCount,
-    // };
-    // const startIndex = (paginationParams.page - 1) * (paginationParams.size);
+  public static async getTasksForAccount(params: GetAllTaskParams): Promise<Task[]> {
     const tasks = await TaskRepository.taskDB
       .find({ account: params.accountId, })
-      // .limit(paginationParams.size)
-      // .skip(startIndex);
     return tasks.map((task) => TaskUtil.convertTaskDBToTask(task));
   }
 }
