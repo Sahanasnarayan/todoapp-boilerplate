@@ -5,7 +5,6 @@ import { AccessService } from '../../services';
 
 export default function Login(): React.ReactElement {
   const navigate = useNavigate();
-
   const accessService = new AccessService();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -37,7 +36,6 @@ export default function Login(): React.ReactElement {
       }
       else {
         alert(`An error occurred. Please try again.`);
-
       }
       console.log(e);
     }
@@ -47,7 +45,6 @@ export default function Login(): React.ReactElement {
     password,
   ]);
   return (
-
 
     <div className="wrapper">
       <span className="bg-animate"></span>
@@ -70,11 +67,9 @@ export default function Login(): React.ReactElement {
             />
             <label> Password</label>
           </div>
-
           <button className="btn" onClick={login}>
             <p className="btntext">Login</p>
           </button>
-
           <div className="logreg-link">
             <p>Don't have an account?
               <a onClick={() => navigate('/register')} className="register-link">Sign Up</a>
