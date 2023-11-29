@@ -22,6 +22,28 @@ body {
     box-shadow: 0 0 25px #0ef;
 }
 
+// .wrapper1 .bg-animate1 {
+//     position: absolute;
+//     top: -120px;
+//     right: 240px;
+//     width: 850px;
+//     height: 600px;
+//     background: linear-gradient(-135deg, #081b29, rgb(222, 226, 227));
+//     border-bottom: 3px solid #0ef;
+//     transform: rotate(75deg) skewY(40deg);
+//     transform-origin: bottom-right;
+// }
+.wrapper1 .bg-animate1 {
+    position: absolute;
+    top: -140px;
+    left: -340px;
+    width: 850px;
+    height: 600px;
+    background: linear-gradient(45deg, rgb(222, 226, 227), #081b29);
+    border-top: 3px solid #0ef;
+    transform: rotate(75deg) skewY(40deg);
+    transform-origin: bottom-left;
+}
 .wrapper1 .form-block {
     position: absolute;
     top: 0;
@@ -33,14 +55,14 @@ body {
     justify-content: center;
 }
 
-.wrapper1 .form-block.login {
-    left: 0;
-    padding: 0 40px;
+.wrapper1 .form-block  {
+    left: 41vh;
+    padding: 0 2px;
 }
 
 .form-block h2 {
     font-size: 32px;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -61,7 +83,7 @@ body {
     padding-right: 23px;
     font-size: 16px;
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
     transition: -5s;
 }
 
@@ -144,16 +166,6 @@ body {
 .infotext p {
     font-size: 16px;
     color: #fff;
+    font-weight: 600;
 }
 
-.wrapper1 .bg-animate1 {
-    position: absolute;
-    top: -120px;
-    right: 240px;
-    width: 850px;
-    height: 600px;
-    background: linear-gradient(-135deg, #081b29, #0ef);
-    border-bottom: 3px solid #0ef;
-    transform: rotate(75deg) skewY(40deg);
-    transform-origin: bottom-right;
-}

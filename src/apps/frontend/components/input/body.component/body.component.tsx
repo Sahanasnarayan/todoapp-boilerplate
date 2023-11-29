@@ -7,13 +7,6 @@ import { FcSynchronize } from "react-icons/fc";
 import { AccessService } from '../../../services';
 export default function Body(): React.ReactElement {
     const [showDescriptionInput, setShowDescriptionInput] = useState(false);
-
-    const toggleDescriptionInput = () => {
-        setShowDescriptionInput(!showDescriptionInput);
-    };
-    const handleFinishClick = () => {
-        setShowDescriptionInput(false);
-    };
     const [desc, setDesc] = useState('');
     const [title, setTitle] = useState('');
     const [todos, setTodos] = useState([]);
@@ -22,6 +15,12 @@ export default function Body(): React.ReactElement {
     const [updatedDesc, setUpdatedDesc] = useState('');
     const accessService = new AccessService();
 
+    const toggleDescriptionInput = () => {
+        setShowDescriptionInput(!showDescriptionInput);
+    };
+    const handleFinishClick = () => {
+        setShowDescriptionInput(false);
+    };
     const addTodo = useCallback(async (e) => {
         e.preventDefault();
 
@@ -44,7 +43,6 @@ export default function Body(): React.ReactElement {
                 alert(`Something went wrong, Please try again with valid credentials.`);
             }
         }
-
     }, [accessService, desc, title]);
 
     const fetchTodos = async () => {
@@ -92,12 +90,12 @@ export default function Body(): React.ReactElement {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await accessService.update(userId, token, taskId, updatedTitle, updatedDesc, isComplete);
-            console.log(response);
+            await accessService.update(userId, token, taskId, updatedTitle, updatedDesc, isComplete);
             setUpdateTaskId(null);
             setUpdatedTitle('');
             setUpdatedDesc('');
             fetchTodos();
+            alert(`Task updated successfully`);
         } catch (e) {
             alert(`An error occurred while updating the task, Please try again.`)
         }
@@ -106,9 +104,9 @@ export default function Body(): React.ReactElement {
     const deleteTodo = async (taskId) => {
         const userId = localStorage.getItem('accountId');
         const token = localStorage.getItem('token');
-
         try {
             await accessService.delete(userId, token, taskId);
+            alert(`Task deletion is successfull`);
             fetchTodos();
         } catch (e) {
             alert(`Error occurred during deleting task: ${e}`);
@@ -124,8 +122,7 @@ export default function Body(): React.ReactElement {
                 />
                 <button
                     className='component-button'
-                    onClick={addTodo}
-                >
+                    onClick={addTodo}>
                     ADD
                 </button>
                 {showDescriptionInput && (
@@ -143,8 +140,7 @@ export default function Body(): React.ReactElement {
                                 />
                                 <button
                                     className='finish-button'
-                                    onClick={handleFinishClick}
-                                >
+                                    onClick={handleFinishClick}>
                                     Finish
                                 </button>
                             </div>
@@ -152,7 +148,6 @@ export default function Body(): React.ReactElement {
                     </div>
                 )}
             </div>
-
             <div className='task'>
                 {todos.filter((todo) => !todo.isComplete).map((todo) => (
                     <div >
@@ -172,8 +167,6 @@ export default function Body(): React.ReactElement {
                                         className='updated-inputDesc'
                                     />
                                     <div className='Sedittask-button'
-
-
                                         onClick={() => save(todo.id, todo.isComplete)}>
                                         SAVE
                                     </div>
@@ -190,20 +183,22 @@ export default function Body(): React.ReactElement {
                                 <p className='task-content'>{todo.description} </p>
                                 <button
                                     className='task-button1'
-                                    onClick={() => complete(todo.id, todo.title, todo.description, !todo.isComplete)}
-                                >Complete<MdDone /></button>
+                                    onClick={() => complete(todo.id, todo.title, todo.description, !todo.isComplete)}>
+                                    Complete<MdDone />
+                                </button>
                                 <button
                                     className='task-button2'
-                                    onClick={() => update(todo.id, todo.title, todo.description)}
-                                ><MdEdit /> </button>
+                                    onClick={() => update(todo.id, todo.title, todo.description)}>
+                                    <MdEdit />
+                                </button>
                                 <button
                                     className='task-button3'
-                                    onClick={() => deleteTodo(todo.id)}
-                                ><MdDelete /></button>
+                                    onClick={() => deleteTodo(todo.id)}>
+                                    <MdDelete />
+                                </button>
                             </div>
                         )}
                     </div>
-
                 ))}
             </div>
             <br />
@@ -212,19 +207,19 @@ export default function Body(): React.ReactElement {
                 {todos.filter((todo) => todo.isComplete).map((todo) => (
                     <div className='Inc-task-box'>
                         <p className='etask-title'>{todo.description}</p>
-
                         <button
                             className='Inc-task-button'
-                            onClick={() => complete(todo.id, todo.title, todo.description, !todo.isComplete)}
-                        >InComplete<FcSynchronize /></button>
+                            onClick={() => complete(todo.id, todo.title, todo.description, !todo.isComplete)}>
+                            InComplete<FcSynchronize />
+                        </button>
                         <button
                             className='Inc-del-button'
-                            onClick={() => deleteTodo(todo.id)}
-                        ><MdDelete /></button>
+                            onClick={() => deleteTodo(todo.id)}>
+                            <MdDelete />
+                        </button>
                     </div>
                 ))}
             </div>
         </div>
-
     );
 };

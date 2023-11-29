@@ -149,6 +149,7 @@ body {
 .info-text p {
     font-size: 16px;
     color: #fff;
+    font-weight: 600;
 }
 
 .wrapper .bg-animate {
@@ -157,7 +158,7 @@ body {
     right: -295px;
     width: 850px;
     height: 600px;
-    background: linear-gradient(45deg, #081b29, #0ef);
+    background: linear-gradient(45deg, #081b29, rgb(222, 226, 227));
     border-bottom: 3px solid #0ef;
     transform: rotate(15deg) skewY(40deg);
     transform-origin: bottom-right;

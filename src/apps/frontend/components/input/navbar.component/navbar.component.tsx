@@ -36,7 +36,5 @@ export default function NavBar(): React.ReactElement {
         {/* Your main content goes here */}
       </div>
     </div>
-
-
   );
 };
