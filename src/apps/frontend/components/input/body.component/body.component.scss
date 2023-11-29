@@ -129,8 +129,9 @@
     display: flex;
     flex: row;
     margin: 10px 20px;
-    border: 1px solid rgb(50, 47, 47);
-    border-radius: 2px;
+    border: 3px solid rgb(164, 158, 158);
+    border-radius: 0px;
+    box-shadow: 0 0 6px #0ef;
 }
 
 .task-box:hover {
@@ -273,7 +274,8 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 13px;
     position: fixed;
-    font-weight: 750;
+    font-weight: 950;
+    color:black;
     margin-top: 12px;
     width: 18vh;
     height: 13vh;

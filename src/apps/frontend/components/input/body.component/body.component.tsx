@@ -5,6 +5,8 @@ import { MdEdit } from "react-icons/md";;
 import { MdDone } from "react-icons/md";
 import { FcSynchronize } from "react-icons/fc";
 import { AccessService } from '../../../services';
+import { ToastContainer, toast } from 'react-toastify';
+
 export default function Body(): React.ReactElement {
     const [showDescriptionInput, setShowDescriptionInput] = useState(false);
     const [desc, setDesc] = useState('');
@@ -28,19 +30,19 @@ export default function Body(): React.ReactElement {
             const userId = localStorage.getItem('accountId');
             const token = localStorage.getItem('token');
             await accessService.add(userId, token, desc, title);
-            alert('Task added successfully');
+            toast.success('Task added successfully');
             setDesc('');
             setTitle('');
             fetchTodos();
         } catch (e) {
             if (!title) {
-                alert(`Please enter your title.`)
+                toast.warning('Please enter task title.')
             }
             if (!desc) {
-                alert(`please enter description.`)
+                toast.warning('please enter task description.')
             }
             else {
-                alert(`Something went wrong, Please try again with valid credentials.`);
+                toast.error('Something went wrong, Please try again with valid credentials.');
             }
         }
     }, [accessService, desc, title]);
@@ -53,7 +55,7 @@ export default function Body(): React.ReactElement {
             const response = await accessService.getAll(userId, token);
             setTodos(response.data);
         } catch (e) {
-            alert(`Error occurred during fetching the data: ${e}`);
+            toast.error('Error occurred during fetching the data: ${e}');
         }
     }
 
@@ -69,7 +71,7 @@ export default function Body(): React.ReactElement {
             await accessService.update(userId, token, taskId, title, description, isComplete);
             fetchTodos();
         } catch (e) {
-            alert(`An error occurred: ${e}`);
+            toast.error('An error occurred: ${e}');
         }
     }
 
@@ -95,9 +97,9 @@ export default function Body(): React.ReactElement {
             setUpdatedTitle('');
             setUpdatedDesc('');
             fetchTodos();
-            alert(`Task updated successfully`);
+            toast.success('Task updated successfully');
         } catch (e) {
-            alert(`An error occurred while updating the task, Please try again.`)
+            toast.error('An error occurred while updating the task, Please try again.');
         }
     }
 
@@ -106,10 +108,10 @@ export default function Body(): React.ReactElement {
         const token = localStorage.getItem('token');
         try {
             await accessService.delete(userId, token, taskId);
-            alert(`Task deletion is successfull`);
+            toast.success('Task deletion is successfull');
             fetchTodos();
         } catch (e) {
-            alert(`Error occurred during deleting task: ${e}`);
+            toast.error('Error occurred during deleting task: ${e}');
         }
     }
     return (
@@ -220,6 +222,7 @@ export default function Body(): React.ReactElement {
                     </div>
                 ))}
             </div>
+            <ToastContainer/>
         </div>
     );
 };

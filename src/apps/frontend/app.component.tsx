@@ -4,6 +4,8 @@ import { Config } from './helpers';
 import { About, Login, NotFound, Register, Home } from './pages';
 import InspectLet from './vendor/inspectlet';
 import './app.global.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App(): React.ReactElement {
   useEffect(() => {
@@ -16,6 +18,7 @@ export default function App(): React.ReactElement {
   return (
     <Router>
       <div className='container'>
+      <ToastContainer/>
         <Routes>
           <Route path='/about' element={<About />} />
           <Route path='/' element={<Login />} />

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AccessService } from '../../../services';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function RegisterData(): React.ReactElement {
 
     const navigate = useNavigate();
@@ -24,21 +25,22 @@ export default function RegisterData(): React.ReactElement {
             const object = await accessService.login(username, password);
             localStorage.setItem('token', object.data.token);
             localStorage.setItem('accountId', object.data.accountId);
-            alert(`User registered and signed in successfully`);
+            toast.success('User registered and signed in successfully');
             navigate(`/home`);
         } catch (e) {
             if (!name || !username || !password) {
-                alert(`Please enter all the fields`);
+                // alert(`Please enter all the fields`);
+                toast.warning('Please enter all the fields');
             }
             if (e.response && e.response.status === 409) {
-                alert(`This username is already registered. Please use a different username.`);
+                toast.error('This username is already registered. Please use a different username');
             } else if (e.response && e.response.status === 400) {
                 const validationErrors = e.response.data.errors;
                 const messages = Object.values(validationErrors).join('\n');
-                alert(messages);
+                toast.error(messages);
             }
             else {
-                alert(`An error occurred. Please try again.`);
+                toast.error('An error occurred. Please try again');
             }
         }
     }, [
@@ -94,6 +96,7 @@ export default function RegisterData(): React.ReactElement {
                 <h2> Hello!<br></br> & Welcome</h2>
                 <p>We're thrilled to have you on this journey!</p>
             </div>
+            <ToastContainer/>
         </div>
     );
 };
