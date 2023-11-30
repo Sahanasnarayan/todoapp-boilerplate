@@ -29,7 +29,6 @@ export default function RegisterData(): React.ReactElement {
             navigate(`/home`);
         } catch (e) {
             if (!name || !username || !password) {
-                // alert(`Please enter all the fields`);
                 toast.warning('Please enter all the fields');
             }
             if (e.response && e.response.status === 409) {

@@ -33,7 +33,7 @@ export default function NavBar(): React.ReactElement {
         </button>
       </div>
       <div className="main-content">
-        {/* Your main content goes here */}
+        {/* main content goes here */}
       </div>
     </div>
   );

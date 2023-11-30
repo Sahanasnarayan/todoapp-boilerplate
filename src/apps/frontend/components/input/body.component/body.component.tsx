@@ -116,14 +116,14 @@ export default function Body(): React.ReactElement {
     }
     return (
         <div>
-            <div className='input-component'>
+            <div className='input-component-block'>
                 <input
-                    className='component-input'
+                    className='input-component'
                     placeholder='Please enter your task'
                     onClick={() => toggleDescriptionInput()}
                 />
                 <button
-                    className='component-button'
+                    className='input-component-button'
                     onClick={addTodo}>
                     ADD
                 </button>
